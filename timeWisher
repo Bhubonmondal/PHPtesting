@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <title>GoribErAberNaam</title>
+  <style>
+    *{
+      background-color: antiquewhite;
+    }
+    #displayDayNightId{
+      text-align: center;
+      color: darkcyan;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 600%;
+      margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
+  <!-- <span onclick="myF" >Edit to your name <input type="text"></span>
+  <span><input type="submit"></span> -->
+
+  <p id="showingSampleHour"></p>
+  <p id="displayDayNightId"></p>
+  <span id="owne"></span>
+
+  <!--
+  morning   6-11am  
+  afternoon 12-4pm = 12-16pm 
+  evening    5-8pm = 17-20pm
+  night     9-12am = 21-24am
+  midnight   1-3am 
+  dawn       4-5am
+  -->
+  <script>
+   
+    let ownerName = "Boys";
+    let hour = new Date().getHours();  
+    
+    //document.getElementById("showingSampleHour").innerHTML=hour;
+    
+    if(hour>=6&&hour<=11)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Moring "+ownerName;
+      //morning
+    }
+    else if(hour>=12&&hour<=16)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Afternoon "+ownerName;
+      //afternoon
+    }
+    else if(hour>=17&&hour<=20)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Evening "+ownerName;
+      //evening
+    }
+    else if(hour>=21&&hour<=24)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Night "+ownerName;
+      //night
+    }
+    else if(hour>=0&&hour<=3)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Midnight "+ownerName;
+      //midnight
+    }
+    else if(hour>=4&&hour<=5)
+    {
+      document.getElementById("displayDayNightId").innerHTML="Good Dawn "+ownerName;
+      //dawn
+    }
+    else
+    {
+      document.getElementById("displayDayNightId").innerHTML="something went wrong";
+    }
+   
+    function myF() {
+  let person = prompt("Please enter your name", "Harry Potter");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
+    "Hello " + person + "! How are you today?";
+  }
+}
+  </script>
+</body>
+</html>
